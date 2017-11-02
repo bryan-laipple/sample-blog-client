@@ -1,2 +1,7 @@
-# sample-blog-client
-Sample React and Redux application
+# Blog Client
+
+This is a sample web application written in React and Redux.
+
+### Special Thanks
+
+This sample application was made possible thanks to [Stephen Grider](https://github.com/StephenGrider) and his React and Redux course on [Udemy](https://www.udemy.com/react-redux/).
