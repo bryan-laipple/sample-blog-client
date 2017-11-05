@@ -1,10 +1,9 @@
 /node_modules
-bundle.js
+env.json
+run-deploy.sh
 npm-debug.log
 .DS_Store
 
 # IntelliJ
 *.iml
 /.idea
-
-env.json
