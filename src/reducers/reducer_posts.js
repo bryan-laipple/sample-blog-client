@@ -5,14 +5,14 @@ export default function(state = {}, action) {
   switch (action.type) {
     case FETCH_POSTS:
       // const newState = {};
-      // action.payload.data.forEach(p => {
+      // action.payload.forEach(p => {
       //   newState[p.id] = p;
       // });
       // return newState;
-      return _.mapKeys(action.payload.data, 'id');
+      return _.mapKeys(action.payload, 'id');
 
     case FETCH_SINGLE_POST:
-      const post = action.payload.data;
+      const post = action.payload;
       // const newState = { ...state }
       // newState[post.id] = post;
       // return newState;
