@@ -34,7 +34,7 @@ const reduxFormField = (name, label, component = textField) => {
 const textField = field => {
   const { touched, error } = field.meta;
   const errorText = touched ? error : '';
-  const formGroupClass = `form-group ${errorText ? 'has-danger' : ''}`;
+  const formGroupClass = `form-group ${errorText ? 'has-error' : ''}`;
   return (
     <div className={formGroupClass}>
       <label>{field.label}</label>
@@ -43,7 +43,7 @@ const textField = field => {
         type="text"
         {...field.input}
       />
-      <div className="text-help">
+      <div className="help-block">
         {errorText}
       </div>
     </div>

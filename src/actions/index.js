@@ -12,7 +12,7 @@ export const DELETE_POST = 'DELETE_POST';
 export const RESET_POSTS = 'RESET_POSTS';
 
 // Promise that resolves with empty object that is used to help against throttling
-const waitFor = (timeout) => new Promise((resolve) => setTimeout(resolve({}), timeout));
+const waitFor = (timeout) => new Promise(resolve => setTimeout(() => resolve({}), timeout));
 
 const canned = [
   {
@@ -101,14 +101,14 @@ export const resetPosts = (callback) => {
       // sending requests one at a time to avoid throttling
       let deletes = Promise.resolve();
       data.forEach(p => {
-        deletes = deletes.then(() => axios.delete(`${BASE_URL}/${p.id}`, CONFIG).then(() => waitFor(500)));
+        deletes = deletes.then(() => axios.delete(`${BASE_URL}/${p.id}`, CONFIG).then(() => waitFor(1000)));
       });
       return deletes;
     })
     .then(() => {
       let uploads = Promise.resolve();
       canned.forEach(p => {
-        uploads = uploads.then(() => axios.post(BASE_URL, p, CONFIG).then(() => waitFor(500)));
+        uploads = uploads.then(() => axios.post(BASE_URL, p, CONFIG).then(() => waitFor(1000)));
       });
       return uploads;
     });
