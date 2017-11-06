@@ -33,9 +33,7 @@ class PostsShow extends Component {
 
   onDeleteClick() {
     const { deletePost, history, id } = this.props;
-    deletePost(id, () => {
-      history.push('/');
-    });
+    deletePost(id, () => history.push('/'));
   }
 }
 
